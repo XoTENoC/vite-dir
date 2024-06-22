@@ -1,0 +1,23 @@
+.hover-test {
+    position: relative;
+
+    a {
+        &:hover {
+
+        }
+    }
+
+    div {
+        visibility: hidden;
+        position: absolute;
+        z-index: 13;
+        background-color: white;
+        margin-left: 20px;
+        opacity: 0;
+    }
+}
+
+.relative {
+    position: relative;
+    background-color: grey;
+}

@@ -1,0 +1,96 @@
+* {
+	margin: 0;
+	padding: 0px;
+	font-family: Helvetica, sans-serif;
+}
+
+.bold {
+	font-weight: 700;
+	color: red;
+}
+
+body {
+	background-color: black;
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 500px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+
+	figure {
+		position: relative;
+		width: 469px;
+		height: 360px;
+
+		img {
+			position: absolute;
+		}
+	}
+
+	.center {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		animation-name: icon;
+		animation-delay: 1.5s;
+		animation-duration: 1.2s;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+		-webkit-animation-name: icon;
+		-webkit-animation-delay: 1.5s;
+		-webkit-animation-duration: 1.2s;
+		-webkit-animation-timing-function: ease;
+		-webkit-animation-fill-mode: forwards;
+	}
+
+	.bottom {
+		top: 115%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		animation-name: iPhoneUp;
+		animation-delay: 0.5s;
+		animation-duration: 1.2s;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+		-webkit-animation-name: iPhoneUp;
+		-webkit-animation-delay: 0.5s;
+		-webkit-animation-duration: 1.2s;
+		-webkit-animation-timing-function: ease;
+		-webkit-animation-fill-mode: forwards;
+
+	}
+
+	.gradient {
+		margin-top: 100px;
+		width: 800px;
+		height: 800px;
+	}
+}
+
+@keyframes iPhoneUp {
+	0% {
+		transform: translate(-50%, -50%);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(-50%, -100%);
+		opacity: 1;
+	}
+}
+@keyframes icon {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

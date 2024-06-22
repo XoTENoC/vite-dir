@@ -1,0 +1,76 @@
+$color-Black: #000000;
+$color-Gray-100: #161616;
+$color-Gray-90: #262626;
+$color-Gray-80: #393939;
+$color-Gray-70: #525252;
+$color-Gray-60: #6f6f6f;
+$color-Gray-50: #8d8d8d;
+$color-Gray-40: #a8a8a8;
+$color-Gray-30: #c6c6c6;
+$color-Gray-20: #e0e0e0;
+$color-Gray-10: #f4f4f4;
+$color-White: #ffffff;
+
+
+* {
+	margin: 0;
+	padding: 0px;
+	font-family: Helvetica, sans-serif;
+}
+
+.bold {
+	font-weight: 700;
+	color: red;
+}
+
+.container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+
+	.line {
+		position: relative;
+		background-color: $color-Gray-30;
+		height: 2px;
+		width: 200px;
+
+		.line-color {
+			top: 0;
+			left: 0;
+			position: absolute;
+			background: transparent;
+			width: 0px;
+			height: 2px;
+			-webkit-animation-duration: 5s;
+			-webkit-animation-iteration-count:1;
+			-webkit-animation-timing-function: ease-in-out;
+			-webkit-animation-fill-mode: forwards;
+			/*-webkit-animation-direction: alternate;*/
+			animation-duration: 5s;
+			animation-iteration-count:1;
+			animation-timing-function: ease-in-out;
+			animation-fill-mode: forwards;
+		}
+
+		.animate {
+			-webkit-animation-name: l1;
+			-webkit-animation-delay: 0s;
+			animation-name: l1;
+			background-color: #0f7aec;
+		}
+	}
+}
+
+@-webkit-keyframes l1 {
+	0%		{ width: 0;}
+	100%	{ width: 200px;}
+}
+
+@keyframes l1 {
+	0%		{ width: 0;}
+	100%	{ width: 200px;}
+  }

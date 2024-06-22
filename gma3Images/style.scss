@@ -1,0 +1,40 @@
+body {
+    background-color: #ababab;
+}
+
+.icon {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 250px;
+    font-size: 6rem;
+    font-weight: 900;
+    font-family: 'JetBrains Mono';
+    color: white;
+    background-color: black;
+    border-radius: 40px;
+    text-size-adjust: auto;
+    text-align: center;
+    line-height: 100%;
+
+    &.mod-white {
+        color: black;
+        background-color: white;
+    }
+
+    &.mod-text-smaller {
+        font-size: 4rem;
+    }
+
+    &.mod-border{
+        background-color: unset;
+        border: 15px solid white;
+    }
+
+    &.mod-border-background{
+        background-color: white;
+        border: 5px solid white;
+    }
+}

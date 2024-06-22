@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Network Diagram</title>
+        <link rel="stylesheet" href="style.scss">
+    </head>
+
+    <body>
+        <div class="side-panel">
+            <div class="side-panel--header">
+                <h2>Services Overview</h2>
+            </div>
+            <div class="side-panel--body">
+                <div class="side-panel--item">
+                    <div class="side-panel--item--icon">
+                        <img src="./logos/proxmoxLogo.png">
+                    </div>
+                    <div class="side-panel--item--content">
+                        <h3 class="side-panel--item--content--service-name">Proxmox</h3>
+                        <p class="side-panel--item--content--url">https://proxmox.nuggslab.com</p>
+                        <p class="side-panel--item--content--computer-name">Saitama</p>
+                        <p class="side-panel--item--content--computer-name">Asuna</p>
+                        <p class="side-panel--item--content--computer-name">Kurisu</p>
+                        <p class="side-panel--item--content--computer-name">Shiro</p>
+                    </div>
+                </div>
+
+                <div class="side-panel--item">
+                    <div class="side-panel--item--icon">
+                        <img src="./logos/InfluxDB.png" style="filter: invert();">
+                    </div>
+                    <div class="side-panel--item--content">
+                        <h3 class="side-panel--item--content--service-name">InfluxDB</h3>
+                        <p class="side-panel--item--content--url">http://192.168.86.224:8086/</p>
+                        <p class="side-panel--item--content--computer-name">influxdb</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-panel" style="margin-top: 20px">
+            <div class="side-panel--header">
+                <h2>Networks Overview</h2>
+            </div>
+            <div class="side-panel--body">
+                <div class="side-panel--item">
+                    <div class="side-panel--item--icon mod-network network1">
+                    </div>
+                    <div class="side-panel--item--content">
+                        <h3 class="side-panel--item--content--service-name">Management</h3>
+                        <p class="side-panel--item--content--computer-name">CIDRv4 <span class="network1-text">10.0.10.0/24</span></p>
+                    </div>
+                </div>
+
+                <div class="side-panel--item">
+                    <div class="side-panel--item--icon mod-network network2">
+                    </div>
+                    <div class="side-panel--item--content">
+                        <h3 class="side-panel--item--content--service-name">Home</h3>
+                        <p class="side-panel--item--content--computer-name">CIDRv4 <span class="network2-text">10.0.20.0/24</span></p>
+                    </div>
+                </div>
+
+                <div class="side-panel--item">
+                    <div class="side-panel--item--icon mod-network network3">
+                    </div>
+                    <div class="side-panel--item--content">
+                        <h3 class="side-panel--item--content--service-name">Guest</h3>
+                        <p class="side-panel--item--content--computer-name">CIDRv4 <span class="network3-text">10.0.30.0/24</span></p>
+                    </div>
+                </div>
+
+                <div class="side-panel--item">
+                    <div class="side-panel--item--icon mod-network network4">
+                    </div>
+                    <div class="side-panel--item--content">
+                        <h3 class="side-panel--item--content--service-name">Servers</h3>
+                        <p class="side-panel--item--content--computer-name">CIDRv4 <span class="network4-text">10.0.40.0/24</span></p>
+                    </div>
+                </div>
+
+                <div class="side-panel--item">
+                    <div class="side-panel--item--icon mod-network network5">
+                    </div>
+                    <div class="side-panel--item--content">
+                        <h3 class="side-panel--item--content--service-name">IoT</h3>
+                        <p class="side-panel--item--content--computer-name">CIDRv4 <span class="network6-text">10.0.50.0/24</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

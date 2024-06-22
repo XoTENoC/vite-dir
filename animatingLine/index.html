@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.scss">
+    </head>
+
+    <body>
+        <div class="container" id="app">
+            <h1 :class="{ 'bold': currentLine === 1 }">hello</h1>
+
+            <div ref="line1" class="line">
+                <span class="line-color" :class="{ 'animate': currentLine === 1 }"></span>
+            </div>
+
+            <h1 :class="{ 'bold': currentLine === 2 }">hello</h1>
+
+            <div ref="line2" class="line">
+                <span class="line-color" :class="{ 'animate': currentLine === 2 }"></span>
+            </div>
+
+            <h1 :class="{ 'bold': currentLine === 3 }">hello</h1>
+
+            <div ref="line3" class="line">
+                <span class="line-color" :class="{ 'animate': currentLine === 3 }"></span>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/vue@3"></script>
+        <script>
+            const { createApp, ref, onMounted } = Vue
+
+            createApp({
+                setup() {
+                    const currentLine = ref(1);
+
+                    // Function to toggle the animation class on each line sequentially
+                    const toggleAnimation = () => {
+                        setInterval(() => {
+                            currentLine.value = (currentLine.value % 3) + 1; // Cycle through lines 1, 2, 3
+                        }, 5000);
+                    }
+
+                    onMounted(() => {
+                        // Start the animation toggle on component mount
+                        toggleAnimation();
+                    });
+
+                    return {
+                        currentLine
+                    };
+                }
+            }).mount('#app')
+        </script>
+    </body>
+
+</html>

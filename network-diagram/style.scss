@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+$network1: #FF69EB;
+$network2: #FF86C8;
+$network3: #FFA3A5;
+$network4: #FFBF81;
+$network5: #FFDC5E;
+
+.network1 {
+    background-color: $network1;
+}
+
+.network2 {
+    background-color: $network2;
+}
+
+.network3 {
+    background-color: $network3;
+}
+
+.network4 {
+    background-color: $network4;
+}
+
+.network5 {
+    background-color: $network5;
+}
+
+.network1-text {
+    color: $network1;
+}
+
+.network2-text {
+    color: $network2;
+}
+
+.network3-text {
+    color: $network3;
+}
+
+.network4-text {
+    color: $network4;
+}
+
+.network5-text {
+    color: $network5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #e3e6eb;
+    font-family: "JetBrains Mono", monospace;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #090a0e;
+    padding: 10px;
+}
+
+.side-panel {
+    padding: 20px;
+    width: 450px;
+    background-color: #111419;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &--body {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &--item {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+
+        &--icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 10px;
+            overflow: hidden;
+
+            &.mod-network {
+                height: 20px;
+                border-radius: 7px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &--content {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+
+            &--url {
+                color: #d9dce1;
+            }
+
+            &--computer-name {
+                color: #7a899f;
+            }
+        }
+    }
+}
