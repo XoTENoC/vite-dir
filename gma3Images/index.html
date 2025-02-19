@@ -1,203 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Export Divs as Images</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-        <link rel="stylesheet" href="style.scss">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Divs as Images</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="./style.scss">
+    <style>
+        .js-image {
+            filter: url(#blendFilter);
+        }
+    </style>
+</head>
 
-    <body>
+<body>
 
-        <!-- <div class="js-image icon" data-name="black-phase-sym">
-            SYM
-        </div>
-        <div class="js-image icon" data-name="black-phase-360">
-            360
-        </div>
-        <div class="js-image icon mod-white" data-name="white-phase-360">
-            360
-        </div>
-        <div class="js-image icon" data-name="black-phase-270">
-            270
-        </div>
-        <div class="js-image icon mod-white" data-name="white-phase-270">
-            270
-        </div>
-        <div class="js-image icon" data-name="black-phase-180">
-            180
-        </div>
-        <div class="js-image icon mod-white" data-name="white-phase-180">
-            180
-        </div>
-        <div class="js-image icon" data-name="black-phase-90">
-            90
-        </div>
-        <div class="js-image icon mod-white" data-name="white-phase-90">
-            90
-        </div>
-        <div class="js-image icon" data-name="black-phase-0">
-            0
-        </div>
-        <div class="js-image icon mod-white" data-name="white-phase-0">
-            0
-        </div>
-        <div class="js-image icon" data-name="black-phase-minus-360">
-            -360
-        </div>
-        <div class="js-image icon mod-white" data-name="white-phase-minus-360">
-            -360
-        </div>
-        <div class="js-image icon" data-name="black-phase-minus-270">
-            -270
-        </div>
-        <div class="js-image icon mod-white" data-name="white-phase-minus-270">
-            -270
-        </div>
-        <div class="js-image icon" data-name="black-phase-minus-180">
-            -180
-        </div>
-        <div class="js-image icon mod-white" data-name="white-1-80">
-            -180
-        </div>
-        <div class="js-image icon" data-name="black-phase-minus-90">
-            -90
-        </div>
-        <div class="js-image icon mod-white" data-name="white-phase-minus-90">
-            -90
-        </div>
-        <div class="js-image icon" data-name="black-phase-minus-0">
-            -0
-        </div> -->
-        <!-- <div class="js-image icon mod-white" data-name="white-phase-minus-0">
-            -0
-        </div> -->
-        <!-- <div class="js-image icon mod-white" data-name="white-0">
-            0
-        </div>
-        <div class="js-image icon mod-white" data-name="white-2">
-            2
-        </div>
-        <div class="js-image icon mod-white" data-name="white-3">
-            3
-        </div>
-        <div class="js-image icon mod-white" data-name="white-4">
-            4
-        </div>
-        <div class="js-image icon mod-white" data-name="white-8">
-            8
-        </div>
-        <div class="js-image icon mod-white" data-name="white-16">
-            16
-        </div> -->
-        <!-- <div class="js-image icon mod-white" data-name="white-on">
-            ON
-        </div>
-        <div class="js-image icon" data-name="black-off">
-            OFF
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-sin">
-            SIN
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-bump">
-            BUMP
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-ramp">
-            RAMP
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-ramp+">
-            RAMP+
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-ramps+">
-            SHORT
-            RAMP+
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-ramp-">
-            RAMP-
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-ramps-">
-            SHORT
-            RAMP-
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-pwm">
-            PWM
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-chase">
-            CHASE
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-twinkle">
-            TWINK
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-sequ">
-            SEQU
-        </div> -->
-        <!-- <div class="js-image icon mod-white mod-text-smaller" data-name="white-grid">
-            GRID
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-grid">
-            PAN
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-grid">
-            TILT
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-grid">
-            FIG 8
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-grid">
-            INVERT FIG 8
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-grid">
-            CIRCLE
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-grid">
-            INVERT CIRCLE
-        </div> -->
-        <!-- <div class="js-image icon mod-white mod-text-smaller" data-name="white-pans">
-            PAN S
-        </div>
-        <div class="js-image icon mod-white mod-text-smaller" data-name="white-tilt">
-            TILT S
-        </div> -->
-        <div class="js-image icon mod-white mod-border" data-name="white-tilt">
+    <!-- Define an SVG filter for blending -->
+    <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+        <filter id="blendFilter">
+            <feBlend mode="multiply" in2="SourceGraphic" result="blend" />
+        </filter>
+    </svg>
 
-        </div>
-        <div class="js-image icon mod-white mod-border-background" data-name="white-tilt">
+    <div class="js-image icon mod-white mod-text-smaller" data-name="Narrow">
+        STORE
+    </div>
 
-        </div>
+    <button id="exportBtn">Export Images</button>
 
+    <script>
+        document.getElementById('exportBtn').addEventListener('click', function () {
+            var divs = document.querySelectorAll('.js-image');
 
-        <button id="exportBtn">Export Images</button>
-
-        <script>
-            document.getElementById('exportBtn').addEventListener('click', function () {
-                var divs = document.querySelectorAll('.js-image');
-
-                var promises = [];
-                divs.forEach(function (div) {
-                    promises.push(new Promise(function (resolve) {
-                        html2canvas(div, {
-                            onrendered: function (canvas) {
-                                resolve(canvas);
-                            }
-                        });
-                    }));
-                });
-
-                Promise.all(promises).then(function (canvases) {
-                    canvases.forEach(function (canvas, index) {
-                        var imgData = canvas.toDataURL('image/png');
-                        var imgName = divs[index].getAttribute('data-name') + '.png';
-                        var downloadLink = document.createElement('a');
-                        downloadLink.href = imgData;
-                        downloadLink.download = imgName;
-                        downloadLink.click();
-                    });
+            var promises = Array.from(divs).map(function (div) {
+                return html2canvas(div, {
+                    backgroundColor: null  // Ensures the canvas has a transparent background
                 });
             });
-        </script>
 
-    </body>
+            Promise.all(promises).then(function (canvases) {
+                canvases.forEach(function (canvas, index) {
+                    var imgData = canvas.toDataURL('image/png');
+                    var imgName = divs[index].getAttribute('data-name') + '.png';
+                    var downloadLink = document.createElement('a');
+                    downloadLink.href = imgData;
+                    downloadLink.download = imgName;
+                    downloadLink.click();
+                });
+            });
+        });
+    </script>
+
+</body>
 
 </html>

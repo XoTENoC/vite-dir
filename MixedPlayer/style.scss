@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+	background: #171717;
+	width: 100%;
+	height: 100%;
+	font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.mixed-player {
+	width: 100%;
+	padding: 20px;
+	border-radius: 25px;
+	border: 1px solid #383838;
+	background: #1E2021;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	&--top {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 20px;
+	}
+
+	&--album-art {
+		width: 224px;
+		height: 106px;
+		border-radius: 10px;
+		border: 2px solid var(--gray-white, #FFF);
+		flex-shrink: 0;
+	}
+
+	&--timeline {
+		height: 158px;
+		flex-grow: 1;
+		background-color: #131415;
+		border-radius: 10px;
+		overflow: hidden;
+		position: relative;
+
+		&--image {
+			position: absolute;
+			height: 100%;
+			top: 0px;
+			left: 0px;
+		}
+	}
+
+	&--bottom {
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		height: 200px;
+		padding: 0px 8px;
+		gap: 20px;
+	}
+
+	&--play-btn {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 20px;
+		border: 1px solid rgba(255, 255, 255, 0.20);
+		background: linear-gradient(180deg, #121415 0%, #121415 100%);
+		padding: 20px;
+		color: #ffffff;
+		text-align: center;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 120%;
+		cursor: pointer;
+		transition: border-color 0.3s ease-in-out;
+
+		&:hover {
+			border-color: white;
+		}
+	}
+
+	&--audio {
+		display: none;
+	}
+}
