@@ -6,8 +6,9 @@ class MixerPlayer {
 
 	private isPlaying: boolean = false;
 	private isLoading: boolean = false;
-	private currentTrackNumber: Number = 0;
-	private currentTime: Number = 0;
+	private currentTrackNumber: number = 0;
+	private currentTime: number = 0;
+	private sectionLength: number = 761;
 
 
 	constructor(El: HTMLElement) {
@@ -33,6 +34,7 @@ class MixerPlayer {
 				this.stopAllTracks();
 
 				if (trackID === this.currentTrackNumber) {
+					this.currentTrackNumber = 0;
 					return;
 				}
 
@@ -50,6 +52,7 @@ class MixerPlayer {
 				}
 
 				this.currentTime = +player.currentTime.toFixed(2);
+				this.timeline.style.transform = `translateX(-${(761/77) * this.currentTime}px)`;
 			});
 		});
 	}
@@ -70,6 +73,8 @@ class MixerPlayer {
 				player.play();
 				this.isPlaying = true;
 
+				player.currentTime = this.currentTime;
+
 				this.changeLoadState(true);
 
 				this.currentTrackNumber = playerID;
@@ -85,7 +90,7 @@ class MixerPlayer {
 				btn.classList.remove("is-disabled");
 			}
 		})
-	}
+	}å
 }
 
 class fooClass {
